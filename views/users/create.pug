@@ -1,0 +1,14 @@
+extends ../layouts/common.pug
+block content
+        h1(class='m-3 text-center rounded-pill border border-success text-danger') Create user
+        if errors
+            each err in errors
+                .alert.alert-danger=err
+
+        form.form-group(action="/users/create", method="post")
+            label(for="name") Name
+            input#name.form-control(type="text" , name ="name" value=values?values.name:'')
+            label(for="phone") Phone
+            input#phone.form-control(type="text" , name ="phone" value=values?values.phone:'')
+           
+            button.mt-2.btn.btn-primary(type="submit") Create

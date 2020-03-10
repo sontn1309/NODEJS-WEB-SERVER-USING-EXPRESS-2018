@@ -1,0 +1,23 @@
+extends ../layouts/common.pug
+block content
+
+        h1(class='m-3 text-center rounded-pill border border-success text-danger') User
+         
+        form(action="/users/search", method="get" class='form-group d-flex clearfix')
+            a(href="/users/create" class='btn btn-primary rounded-pill') New
+
+            div.ml-auto.d-flex
+              input(type="text" name="name" class=' rounded-pill border border-success ml-2' width='300px' )        
+              button(type="submit" class='btn btn-primary ml-2 rounded-pill') Search
+        table.table
+          tr
+            th Name
+            th Phone
+            th View 
+       
+          each val in users
+            tr
+              td= val.name 
+              td=val.phone
+              td
+                a.btn.btn-light(href="/users/"+val.id) View
