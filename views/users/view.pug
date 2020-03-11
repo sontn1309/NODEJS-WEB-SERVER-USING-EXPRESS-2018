@@ -3,8 +3,8 @@ block content
         h1 View User
         b Name
         br
-        span=user.name
+        span=user?user.name:""
         br
         b phone 
         br
-        span=user.id
+        span=user?user.id:""
