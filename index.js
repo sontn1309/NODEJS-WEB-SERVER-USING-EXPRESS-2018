@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser=require('cookie-parser');
 
+const authMiddlewares=require("./middlewares/auth.middleware")
 const userRouters=require('./routes/user.route');
+const authRouters=require('./routes/auth.route');
 const app = express();
 const db=require('./db');
 // Set some defaults (required if your JSON file is empty)
@@ -11,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(cookieParser());
+app.use(cookieParser('kcbskajcbksjacbskjacbskjacb'));
 const port = 3000;
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -31,5 +33,6 @@ app.get('/', (req, res) => res.render('index', {
     ]
 }));
 app.use(express.static('public'));
-app.use('/users',userRouters);
+app.use('/users',authMiddlewares.requireAuth,userRouters);
+app.use('/auth',authRouters);
 app.listen(port, () => console.log(`Example app listen port on port ${port}`))

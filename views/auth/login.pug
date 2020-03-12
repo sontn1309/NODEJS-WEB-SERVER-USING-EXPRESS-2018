@@ -1,0 +1,14 @@
+extends ../layouts/common.pug
+block content
+        h1(class='m-3 text-center rounded-pill border border-success text-danger') Login
+        if errors
+            each err in errors
+                .alert.alert-danger=err
+
+        form.form-group(action="/auth/login", method="post")
+            label(for="email") Email
+            input#email.form-control(type="text" , name ="email" value=values?values.name:'')
+            label(for="password") Password
+            input#password.form-control(type="text" , name ="password" value=values?values.phone:'')
+           
+            button.mt-2.btn.btn-primary(type="submit") Login
