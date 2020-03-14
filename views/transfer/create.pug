@@ -1,0 +1,12 @@
+extends ../layouts/common.pug
+block content 
+    h1 Transfer
+    
+  
+    form.form-group(action="/auth/login", method="post")
+            label(for="account") Account
+            input#account.form-control(type="text" , name ="accountId")
+            label(for="amount") Password
+            input#amount.form-control(type="number" , name ="amount" )
+           
+            button.mt-2.btn.btn-primary(type="submit") Tranfer

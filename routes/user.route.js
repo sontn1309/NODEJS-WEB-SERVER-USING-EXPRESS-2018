@@ -1,4 +1,6 @@
 const shortid=require('shortid');
+const multer=require('multer');
+const upload=multer({dest:'./public/uploads/'})
 var express = require('express');
 const app = express();
 var router = express.Router();
@@ -13,7 +15,10 @@ res.send("hello");
 })
 router.get('/search', controller.search);
 router.get('/create', controller.createget);
-router.post('/create',validate.postCreate,controller.createpost);
+router.post('/create',
+    upload.single('avatar'),
+        validate.postCreate,
+            controller.createpost);
 router.get('/:id',controller.serachId)
 
 module.exports=router;

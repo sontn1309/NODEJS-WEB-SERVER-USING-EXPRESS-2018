@@ -20,6 +20,7 @@ module.exports.createget= (req, res) => {
     res.render('users/create')};
 module.exports.createpost=  (req, res) => {
     req.body.id=shortid.generate();
+   req.body.avatar=req.file.path.substring(7);
     let x = req.body;
         db.get('users').push(x).write();
         res.redirect('/users')
