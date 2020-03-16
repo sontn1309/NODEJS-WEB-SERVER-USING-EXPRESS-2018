@@ -3,7 +3,8 @@ block content
     h1 Transfer
     
   
-    form.form-group(action="/auth/login", method="post")
+    form.form-group(action="/transfer/create", method="post")
+            input(type="hidden", name="_csrf" value=csrfToken);
             label(for="account") Account
             input#account.form-control(type="text" , name ="accountId")
             label(for="amount") Password

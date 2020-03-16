@@ -624,6 +624,34 @@
         "25c8d38d-921f-4669-900c-833e641f5529": 4,
         "70a04886-a670-44c4-aed8-aba64d032149": 2
       }
+    },
+    {
+      "id": "fbP9DLlj"
+    },
+    {
+      "id": "1ebgRBIg"
+    },
+    {
+      "id": "KxvCLBeS"
+    }
+  ],
+  "transfers": [
+    {
+      "id": "tJyeBLTQ",
+      "amount": 50000,
+      "accountId": "123456"
+    },
+    {
+      "id": "RnOgFoXZ",
+      "amount": 200000,
+      "accountId": "123456",
+      "userId": "LHJ62C3E"
+    },
+    {
+      "id": "9q5-sx77",
+      "amount": 100000,
+      "accountId": "x123abc",
+      "userId": "LHJ62C3E"
     }
   ]
 }
